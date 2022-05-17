@@ -1,0 +1,27 @@
+<div id="<%= dom_id short_url %>">
+  <p>
+    <strong>Url:</strong>
+    <%= short_url.url %>
+  </p>
+  <p>
+    <strong>Shortcode:</strong>
+    <%= short_url.shortcode %>
+  </p>
+  <p>
+    <%# NOTE: short URL link to click or share. visiting shortURL will take you to original URL %>
+    <%# TODO: A user can access a /<shortcode>/stats endpoint in order to see when the shortcode was registered, when it was last accessed, and how many times it was accessed. %>
+    Show stats: <%= link_to nil, "#{url_sans_path}/#{short_url.shortcode}/stats", target: '_window' %>
+  </p>
+  <p>
+    Visit short URL => reach original URL
+    <%= link_to nil, "#{url_sans_path}/#{short_url.shortcode}", target: '_window' %>
+  </p>
+  <p>
+    <strong>Last accessed at:</strong>
+    <%= short_url.last_accessed_at %>
+  </p>
+  <p>
+    <strong>Counts:</strong>
+    <%= short_url.counts %>
+  </p>
+</div>

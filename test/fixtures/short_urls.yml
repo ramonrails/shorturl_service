@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyText
+  shortcode: MyString
+  last_accessed_at: 2022-05-18 00:03:46
+  counts: 1
+
+two:
+  url: MyText
+  shortcode: MyString
+  last_accessed_at: 2022-05-18 00:03:46
+  counts: 1

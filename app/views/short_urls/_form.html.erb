@@ -1,0 +1,41 @@
+<%= form_with(model: short_url) do |form| %>
+  <% if short_url.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(short_url.errors.count, "error") %> prohibited this short_url from being saved:</h2>
+
+      <ul>
+        <% short_url.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_area :url %>
+  </div>
+
+<% if form.object.persisted? %>
+  <div>
+    <%= form.label :shortcode, style: "display: block" %>
+    <%= form.text_field :shortcode %>
+    <p>Note: You can customize the shortcode. Just enter any value.</p>
+    <br>
+  </div>
+
+  <div>
+    <%= form.label :last_accessed_at, style: "display: block" %>
+    <%= form.datetime_field :last_accessed_at, readonly: true, disabled: true %>
+  </div>
+
+  <div>
+    <%= form.label :counts, style: "display: block" %>
+    <%= form.number_field :counts, readonly: true, disabled: true %>
+  </div>
+<% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
